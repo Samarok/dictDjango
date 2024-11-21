@@ -1,0 +1,18 @@
+{% extends 'index.html'%}
+
+{% block content %}
+            <div class="container">
+                <h1 class="text-center" style="margin-bottom: 20px"> Добавить слово </h1>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <input type="submit" value="Добавить слово" class="btn btn-primary btn-lg">
+                </form>
+            </div>
+        {% if error %}
+            <script> alert('{{error}}') </script>
+        {% endif %}
+        {% if success %}
+            <script> alert('{{success}}') </script>
+        {% endif %}
+{% endblock %}

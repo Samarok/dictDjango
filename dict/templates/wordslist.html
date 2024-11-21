@@ -1,0 +1,19 @@
+{% extends 'index.html'%}
+
+{% block content %}
+    <div class="container">
+        <h1 class="text-center"> Словарь </h1>
+        <table class="table table-bordered">
+            <tr class="row text-center">
+                <th class="col-6"> Слово </th>
+                <th class="col-6"> Перевод </th>
+            </tr>
+            {% for word in words %}
+            <tr class="row text-center">
+                <td class="col-6"> {{word.word}} </td>
+                <td class="col-6"> {{word.translation}} </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
